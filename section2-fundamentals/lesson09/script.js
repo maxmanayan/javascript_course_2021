@@ -56,7 +56,7 @@
 // const isFullAge = ageJin >= 18
 
 
-// CODING CHALLENGE #1
+// // CODING CHALLENGE #1 + CODING CHALLENGE #2
 
 // let markMass = 78
 // let markHeight = 1.69
@@ -66,10 +66,16 @@
 // let markBMI = markMass / (markHeight * markHeight)
 // let johnBMI = johnMass / (johnHeight * johnHeight)
 
-// console.log(markBMI, johnBMI)
+// // console.log(markBMI, johnBMI)
 
 // let markHigherBMI = markBMI > johnBMI
-// console.log(markHigherBMI)
+// // console.log(markHigherBMI)
+
+// if (markHigherBMI === true) {
+//   console.log(`Mark's BMI (${markBMI}) is higher than John's BMI (${johnBMI})!`)
+// } else {
+//   console.log(`John's BMI (${johnBMI}) is higher than Mark's BMI (${markBMI})!`)
+// }
 
 // markMass = 95
 // markHeight = 1.88
@@ -80,7 +86,108 @@
 // markBMI = markMass / (markHeight * markHeight)
 // johnBMI = johnMass / (johnHeight * johnHeight)
 
-// console.log(markBMI, johnBMI)
+// // console.log(markBMI, johnBMI)
 
 // markHigherBMI = markBMI > johnBMI
-// console.log(markHigherBMI)
+// // console.log(markHigherBMI)
+
+// if (markHigherBMI === true) {
+//   console.log(`Mark's BMI (${markBMI}) is higher than John's BMI (${johnBMI})!`)
+// } else {
+//   console.log(`John's BMI (${johnBMI}) is higher than Mark's BMI (${markBMI})!`)
+// }
+
+
+// // LESSON 17
+
+// const job = 'engineer'
+// const firstName = 'Max'
+// const birthYear = 1997
+// const year = 2045
+
+// const classicConcat = "I'm " + firstName + ', a ' + (year - birthYear) + ' year old ' + job + '! ';
+// console.log(classicConcat)
+
+// const newConcat = `I'm ${firstName}, a ${year-birthYear} year old ${job}!`
+// console.log(newConcat)
+
+// console.log('String with \n\
+// multiple \n\
+// lines')
+
+// console.log(`String with
+// multiple
+// lines`)
+
+
+// // LESSON 18
+
+// const legalDrivingAge = 16
+
+// const age = 3
+
+// const canDrive = (age) => {
+//   if (age < legalDrivingAge) return `This person ${legalDrivingAge - age} year(s) left until they can drive!`
+//   if (age >= legalDrivingAge) return "This person can drive!"
+// }
+
+// console.log(canDrive(age))
+
+
+// const birthYear = 1781;
+
+// const centuryBorn = (birthYear) => {
+//   let birthYearArr = birthYear.toString().split('').map(Number)
+//   let firstTwoNums = []
+//   birthYearArr.forEach((num, i) => {
+//     if (i <= 1) {firstTwoNums.push(num)}
+//   })
+//   let century = `${parseInt(firstTwoNums.join('')) + 1}th Century`
+//   return century
+// }
+
+// console.log(centuryBorn(birthYear))
+
+
+// // LESSON 20
+
+// // TYPE CONVERSION  
+// const inputYear = '1991' 
+// //convert string to number
+// console.log(Number(inputYear), inputYear)
+// //convert number to string
+// console.log(String(23), 23)
+
+
+// // AUTOMATIC TYPE COERCION
+// // only plus converts numbers to strings
+// console.log('I am ' + 23 + ' years old')
+// // minus, multiply, greater than, etc. converts strings to numbers
+// console.log('23' - '10' - 3)
+
+
+// // LESSON 21
+
+// // 5 falsey values: 0, ' ', undefined, null, NaN
+
+// console.log(Boolean(0))
+// console.log(Boolean(undefined))
+// console.log(Boolean('Max'))
+// console.log(Boolean({}))
+// console.log(Boolean(''))
+
+// // using in if/else
+
+// const money = 0
+// if (money) {
+//   console.log("Don't spend it all!")
+// } else {
+//   console.log("You should get a job!")
+// }
+
+// let height
+// if (height) {
+//   console.log("height is defined")
+// } else {
+//   console.log("height is undefined")
+// }
