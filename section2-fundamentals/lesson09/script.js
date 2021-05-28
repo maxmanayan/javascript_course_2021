@@ -191,3 +191,30 @@
 // } else {
 //   console.log("height is undefined")
 // }
+
+
+// LESSON 22 - EQUALITY OPERATORS
+
+const age = 18
+
+// strict equality operator (===) no type coercion, values must be exactly same
+if (age === 18) console.log('You just became an adult! (strict)')
+
+// loose equality operator (==) performs type coercion
+if (age == '18') console.log('You just became an adult! (loose)')
+
+const favorite = Number(prompt("What's your favorite number?"))
+console.log(favorite)
+
+if (favorite === 23) {
+  console.log('Cool! 23 is an amazing number!')
+} else if (favorite === 7) {
+  console.log("7 is also a cool number")
+} else {
+  console.log("That number is alright")
+}
+
+
+if (favorite !== 23) {
+  console.log("Why not 23??")
+}
