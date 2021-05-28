@@ -193,28 +193,68 @@
 // }
 
 
-// LESSON 22 - EQUALITY OPERATORS
+// // LESSON 22 - EQUALITY OPERATORS
 
-const age = 18
+// const age = 18
 
-// strict equality operator (===) no type coercion, values must be exactly same
-if (age === 18) console.log('You just became an adult! (strict)')
+// // strict equality operator (===) no type coercion, values must be exactly same
+// if (age === 18) console.log('You just became an adult! (strict)')
 
-// loose equality operator (==) performs type coercion
-if (age == '18') console.log('You just became an adult! (loose)')
+// // loose equality operator (==) performs type coercion
+// if (age == '18') console.log('You just became an adult! (loose)')
 
-const favorite = Number(prompt("What's your favorite number?"))
-console.log(favorite)
+// const favorite = Number(prompt("What's your favorite number?"))
+// console.log(favorite)
 
-if (favorite === 23) {
-  console.log('Cool! 23 is an amazing number!')
-} else if (favorite === 7) {
-  console.log("7 is also a cool number")
-} else {
-  console.log("That number is alright")
-}
+// if (favorite === 23) {
+//   console.log('Cool! 23 is an amazing number!')
+// } else if (favorite === 7) {
+//   console.log("7 is also a cool number")
+// } else {
+//   console.log("That number is alright")
+// }
 
 
-if (favorite !== 23) {
-  console.log("Why not 23??")
-}
+// if (favorite !== 23) {
+//   console.log("Why not 23??")
+// }
+
+
+// // LESSON 23-24 - BOOLEAN LOGIC
+
+// const hasDriversLicense = true 
+// const hasGoodVision = true
+// const isTired = false
+
+// console.log(hasDriversLicense && hasGoodVision)
+// console.log(hasDriversLicense || hasGoodVision)
+// console.log(!hasDriversLicense)
+
+// if (hasDriversLicense && hasGoodVision && !isTired) {
+//   console.log('Sarah is able to drive!')
+// } else {
+//   console.log('Someone else should drive...')
+// }
+
+// //  CODING CHALLENGE #3
+
+// // const avgDolphinsScore = (96 + 108 + 89)/3
+// // const avgKoalasScore = (88 + 91 + 110)/3
+// // const avgDolphinsScore = (97 + 112 + 101)/3
+// // const avgKoalasScore = (109 + 95 + 123)/3
+// const avgDolphinsScore = (97 + 112 + 101)/3
+// const avgKoalasScore = (109 + 95 + 106)/3
+
+
+// console.log(avgDolphinsScore, avgKoalasScore)
+
+// if (avgDolphinsScore > avgKoalasScore && avgDolphinsScore > 100) {
+//   console.log('Dolphins Win!')
+// } else if (avgKoalasScore > avgDolphinsScore && avgKoalasScore > 100) {
+//   console.log('Koalas Win!') 
+// } else if (avgDolphinsScore === avgKoalasScore && avgDolphinsScore > 100) {
+//   console.log("It's a draw!")
+// } else if (avgDolphinsScore === avgKoalasScore && avgKoalasScore > 100) {
+//   console.log("It's a draw!")
+// }
+
