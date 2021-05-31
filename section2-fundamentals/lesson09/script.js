@@ -301,3 +301,20 @@
 // } else {
 //   console.log('Not a valid day!')
 // }
+
+
+// LESSON 27 - EXPRESSIONS
+
+// expression - anything that produces a value
+// examples: 
+3 + 4
+1991
+true && false && !true
+
+// statement - bigger piece of code that does not produce a value on its own 
+// statements are like sentence structure
+// examples: 
+
+if (23 > 10) {
+  const str = '23 is bigger'
+}
