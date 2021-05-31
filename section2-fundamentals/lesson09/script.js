@@ -303,18 +303,45 @@
 // }
 
 
-// LESSON 27 - EXPRESSIONS
+// // LESSON 27 - EXPRESSIONS
 
-// expression - anything that produces a value
-// examples: 
-3 + 4
-1991
-true && false && !true
+// // expression - anything that produces a value
+// // examples: 
+// 3 + 4
+// 1991
+// true && false && !true
 
-// statement - bigger piece of code that does not produce a value on its own 
-// statements are like sentence structure
-// examples: 
+// // statement - bigger piece of code that does not produce a value on its own 
+// // statements are like sentence structure
+// // examples: 
 
-if (23 > 10) {
-  const str = '23 is bigger'
-}
+// if (23 > 10) {
+//   const str = '23 is bigger'
+// }
+
+
+// // LESSON 28 - CONDITIONAL (TERNARY) OPERATOR
+
+// const age = 16
+// age >= 18 ? console.log('I like to drink wine!') : console.log('I like to drink water!')
+
+// const drink = age >= 18 ? 'wine' : 'water'
+// console.log(drink)
+
+// let drink2
+// if (age >= 18) {
+//   drink2 = 'wine';
+// } else {
+//   drink2 = 'water'
+// }
+// console.log(drink2)
+
+
+// console.log(`I like to drink ${age >= 18 ? 'wine' : 'water'}`)
+
+// // LESSON 29 - CODING CHALLENGE #3
+
+// const bill = 430
+// const tip = bill >= 50 && bill <= 300 ? (bill * 0.15) : (bill * 0.2)
+
+// console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}`)
