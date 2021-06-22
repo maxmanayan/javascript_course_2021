@@ -61,3 +61,22 @@
 
 // console.log(fruitProcessor(3,4))
 
+// // LESSON 37 - Reviewing Functions
+// const calcAge = function(birthYear) {
+//   return 2021 - birthYear
+// }
+
+// const yearsUntilRetirement = function(birthYear, firstName) {
+//   const age = calcAge(birthYear)
+//   const retirement = 65 - age
+
+//   if (retirement > 0) {
+//     return `${firstName} retires in ${retirement} years.`
+//   } else {
+//     return `${firstName} retired ${retirement * -1} years ago.`
+//   }
+// }
+
+// console.log(yearsUntilRetirement(1963, 'Dad'))
+// console.log(yearsUntilRetirement(1933, 'Grandma'))
+
