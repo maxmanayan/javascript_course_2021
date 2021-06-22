@@ -34,3 +34,15 @@
 
 // console.log(calcAge2(1985))
 
+// // arrow function
+// const calcAge3 = birthYear => 2021 - birthYear
+
+// console.log(calcAge3(1970))
+
+// const yearsUntilRetirement = (birthYear, firstName) => {
+//   const age = 2021 - birthYear
+//   const retirement = 65 - age
+//   return `${firstName} retires in ${retirement} years.`
+// }
+
+// console.log(yearsUntilRetirement(1997, 'Max'))
