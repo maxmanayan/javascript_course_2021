@@ -19,3 +19,18 @@
 
 // const fruitJuice = fruitProcessor(5, 3)
 // console.log(fruitJuice)
+
+// // function declaration
+// function calcAge1(birthYear) {
+//   return 2021 - birthYear
+// }
+
+// console.log(calcAge1(1997))
+
+// // function expression (anonymous function)
+// const calcAge2 = function (birthYear) {
+//   return 2021 - birthYear
+// }
+
+// console.log(calcAge2(1985))
+
