@@ -1,3 +1,4 @@
+// // LESSON 32 - Strict Mode
 // strict mode can catch errors and give warnings
 'use strict';
 
@@ -6,6 +7,7 @@
 // if (passedTest) hasDriversLicense = true 
 // if (hasDriversLicense) console.log('I have a drivers license.')
 
+// // LESSON 33 - Intro to Functions
 // function logger() {
 //   console.log('My name is Max')
 // }
@@ -20,6 +22,8 @@
 // const fruitJuice = fruitProcessor(5, 3)
 // console.log(fruitJuice)
 
+
+// // LESSON 34 - Function Declarations vs. Function Expressions
 // // function declaration
 // function calcAge1(birthYear) {
 //   return 2021 - birthYear
@@ -34,6 +38,7 @@
 
 // console.log(calcAge2(1985))
 
+// // LESSON 35 - Arrow functions
 // // arrow function
 // const calcAge3 = birthYear => 2021 - birthYear
 
