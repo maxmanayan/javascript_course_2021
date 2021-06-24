@@ -107,3 +107,36 @@
 
 // console.log(checkWinner(avgDolphins, avgKoalas))
 
+// // Lesson 39 - Intro to Arrays
+
+// const friends = ['Michael', 'Steven', 'Peter'];
+// console.log(friends);
+
+// const yearsExample = new Array(1991, 1984, 2008, 2020)
+
+// console.log(friends[0])
+// console.log(friends[2])
+
+// console.log(friends.length)
+// console.log(friends[friends.length - 1])
+
+// friends[2] = 'Jay'
+// console.log(friends)
+
+// const max = ['Max', 1997, 2021-1997, 'engineer', friends]
+// console.log(max)
+
+// // exercise
+// function calcAge(birthYear) {
+//   return 2021 - birthYear
+// }
+
+// const years = [1991, 2002, 1985, 1976, 1950, 1932]
+
+// console.log(calcAge(years[0]))
+// console.log(calcAge(years[3]))
+// console.log(calcAge(years[5]))
+
+// const ages = [calcAge(years[0]), calcAge(years[3]), calcAge(years[5])]
+// console.log(ages)
+
