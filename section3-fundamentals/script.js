@@ -193,3 +193,43 @@
 
 // const total = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]]
 // console.log(total)
+
+
+// Lesson 42&43 - Intro to Objects
+const max = {
+  firstName: 'Max',
+  lastName: 'Manayan',
+  age: 24,
+  job: 'engineer',
+  friends: ['Michael', 'Jim', 'Pam']
+}
+
+console.log(max)
+
+// dot notation
+console.log(max.firstName)
+
+// bracket notation
+console.log(max['lastName'])
+
+const nameKey = 'Name'
+console.log(max['first' + nameKey])
+console.log(max['last' + nameKey])
+
+const interestedIn = prompt('What do you what to know about Max? Choose between job or age.')
+
+if (max[interestedIn]) {
+  console.log(max[interestedIn])
+} else {
+  console.log('Invalid request')
+}
+
+max.location = 'Earth'
+
+console.log(max)
+
+// challenge
+// "Max has 3 friends, and his best friend is Michael."
+console.log(`${max.firstName} has ${max.friends.length} friends, and his best friend is ${max.friends[0]}`)
+
+
