@@ -195,41 +195,82 @@
 // console.log(total)
 
 
-// Lesson 42&43 - Intro to Objects
-const max = {
-  firstName: 'Max',
-  lastName: 'Manayan',
-  age: 24,
-  job: 'engineer',
-  friends: ['Michael', 'Jim', 'Pam']
-}
+// // Lesson 42&43 - Intro to Objects
+// const max = {
+//   firstName: 'Max',
+//   lastName: 'Manayan',
+//   age: 24,
+//   job: 'engineer',
+//   friends: ['Michael', 'Jim', 'Pam']
+// }
 
-console.log(max)
+// console.log(max)
 
-// dot notation
-console.log(max.firstName)
+// // dot notation
+// console.log(max.firstName)
 
-// bracket notation
-console.log(max['lastName'])
+// // bracket notation
+// console.log(max['lastName'])
 
-const nameKey = 'Name'
-console.log(max['first' + nameKey])
-console.log(max['last' + nameKey])
+// const nameKey = 'Name'
+// console.log(max['first' + nameKey])
+// console.log(max['last' + nameKey])
 
-const interestedIn = prompt('What do you what to know about Max? Choose between job or age.')
+// const interestedIn = prompt('What do you what to know about Max? Choose between job or age.')
 
-if (max[interestedIn]) {
-  console.log(max[interestedIn])
-} else {
-  console.log('Invalid request')
-}
+// if (max[interestedIn]) {
+//   console.log(max[interestedIn])
+// } else {
+//   console.log('Invalid request')
+// }
 
-max.location = 'Earth'
+// max.location = 'Earth'
 
-console.log(max)
+// console.log(max)
 
-// challenge
-// "Max has 3 friends, and his best friend is Michael."
-console.log(`${max.firstName} has ${max.friends.length} friends, and his best friend is ${max.friends[0]}`)
+// // challenge
+// // "Max has 3 friends, and his best friend is Michael."
+// console.log(`${max.firstName} has ${max.friends.length} friends, and his best friend is ${max.friends[0]}`)
 
+
+// // Lesson 44 - Object Methods
+// const max = {
+//   firstName: 'Max',
+//   lastName: 'Manayan',
+//   birthYear: 1997,
+//   job: 'engineer',
+//   friends: ['Michael', 'Jim', 'Pam'],
+//   hasDriversLicense: true,
+
+//   calcAge: function(birthYear) {
+//     return 2021 - birthYear
+//   },
+
+//   // uses this keyword, doesn't require parameter to be passed
+//   calcAge2: function() {
+//     console.log(this)
+//     return 2021 - this.birthYear
+//   },
+
+//   //sets max.age on first call
+//   calcAge3: function() {
+//     this.age = 2021 - this.birthYear
+//     return this.age
+//   },
+
+//   getSummary: function() {
+//     return `${this.firstName} is a ${this.age}-year old ${this.job},
+//     and he ${this.hasDriversLicense === true ? 'has' : 'does not have'} 
+//     a drivers license.`
+//   }
+// }
+
+// console.log(max.calcAge(max.birthYear))
+// console.log(max.calcAge2())
+// console.log(max.calcAge3())
+// console.log(max.age)
+
+// // challenge
+// // "Max is a 21-year old engineer, and he has a drivers license."
+//  console.log(max.getSummary())
 
