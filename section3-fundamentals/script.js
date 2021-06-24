@@ -108,7 +108,6 @@
 // console.log(checkWinner(avgDolphins, avgKoalas))
 
 // // Lesson 39 - Intro to Arrays
-
 // const friends = ['Michael', 'Steven', 'Peter'];
 // console.log(friends);
 
@@ -139,4 +138,37 @@
 
 // const ages = [calcAge(years[0]), calcAge(years[3]), calcAge(years[5])]
 // console.log(ages)
+
+
+// // Lesson 40 - Basic Array Operations (Methods)
+// const friends = ['Michael', 'Steven', 'Peter'];
+
+// // add elements
+// const newLength = friends.push("Jay") // last
+// console.log(friends)
+// console.log(newLength) // push method returns the new length of an array
+
+// friends.unshift("John") // first
+// console.log(friends)
+
+// // remove elements
+// const popped = friends.pop() // last
+// console.log(friends)
+// friends.pop()
+// console.log(friends)
+// console.log(popped)
+
+// friends.shift() // first
+// console.log(friends)
+
+// // find more info about array
+// console.log(friends.indexOf('Steven'))
+// console.log(friends.indexOf('Bob'))
+
+// console.log(friends.includes('Steven'))
+// console.log(friends.includes('Bob'))
+
+// if (friends.includes('Steven')) {
+//   console.log('You have a friend named Steven')
+// }
 
