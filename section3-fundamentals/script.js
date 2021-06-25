@@ -321,3 +321,49 @@
 //   console.log(`Lifting weights repetition ${rep}`)
 // }
 
+
+// // Lesson 47 - Looping Arrays, Breaking, Continuing
+// const maxArray = [
+//   'Max',
+//   'Mananayan',
+//   2021 - 1997,
+//   'teacher',
+//   ['Michael', 'Jim', 'Pam'],
+//   true
+// ]
+
+// for(let i = 0; i <= maxArray.length - 1 ; i++) {
+//   console.log(maxArray[i], typeof maxArray[i])
+// }
+
+// let typeOfArray = []
+
+// for(let i = 0; i <= maxArray.length - 1; i++) {
+//   typeOfArray.push(typeof maxArray[i])
+// }
+
+// console.log(typeOfArray)
+
+// const years = [1997, 2005, 1969, 2020];
+// const ages = []
+
+// for(let i = 0; i <= years.length - 1; i++) {
+//   ages.push(2021 - years[i])
+// }
+
+// console.log('ages', ages)
+
+// //continue and break
+// console.log('Only strings -------')
+// for(let i = 0; i <= maxArray.length - 1 ; i++) {
+//   if (typeof maxArray[i] !== 'string') continue
+//   console.log(maxArray[i], typeof maxArray[i])
+// }
+
+// console.log('Break after number is found -------')
+// for(let i = 0; i <= maxArray.length - 1 ; i++) {
+//   if (typeof maxArray[i] === 'number') break
+//   console.log(maxArray[i], typeof maxArray[i])
+// }
+
+
