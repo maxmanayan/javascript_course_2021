@@ -314,3 +314,10 @@
 
 // console.log(higherBMI(john, mark))
 
+
+// // Lesson 46 - The for loop
+// // for(counter, condition - loop will run while condition is true; counter update)
+// for(let rep = 1; rep <= 10; rep++) {
+//   console.log(`Lifting weights repetition ${rep}`)
+// }
+
