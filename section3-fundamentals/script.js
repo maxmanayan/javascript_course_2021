@@ -386,3 +386,28 @@
 //   }
 // }
 
+
+// // Lesson 49 - The while loop
+// for(let rep = 1; rep <= 10; rep++) {
+//   console.log(`FOR: Lifting weights repetition ${rep}`)
+// }
+
+// let rep = 1
+// while(rep <= 10) {
+//   console.log(`WHILE: Lifting weights repetition ${rep}`)
+//   rep++
+// }
+
+// let dice = Math.trunc(Math.random() * 6) + 1
+// console.log(dice)
+
+// while(dice < 4) {
+//   console.log(`The dice has rolled ${dice}`)
+//   dice = Math.trunc(Math.random() * 6) + 1
+//   if(dice <= 4) {
+//     console.log('Your roll was too high!')
+//   }
+// }
+
+
+// Lesson 50 - Coding Challenge #4
