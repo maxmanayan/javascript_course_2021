@@ -367,3 +367,22 @@
 // }
 
 
+// // Lesson 48 - Looping over array backwards, and looping within a loop
+// const maxArray = [
+//   'Max',
+//   'Mananayan',
+//   2021 - 1997,
+//   'teacher',
+//   ['Michael', 'Jim', 'Pam'],
+// ]
+
+// for (let i = maxArray.length - 1; i >= 0; i--) {
+//   console.log(maxArray[i])
+// }
+
+// for(let exercise = 1; exercise <= 3; exercise++) {
+//   for(let rep = 1; rep <= 5; rep++) {
+//     console.log(`Exercise ${exercise} Rep ${rep} Complete!`)
+//   }
+// }
+
