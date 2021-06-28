@@ -107,3 +107,19 @@
 // };
 
 // console.log(calcAmplitudeBug(temperatures, temperatures2));
+
+// // Lesson 62 - Coding Challenge #1
+
+// const temps1 = [17, 21, 23];
+// const temps2 = [12, 5, -5, 0, 4];
+
+// const printForecast = function (temps) {
+//   forecastArr = [];
+//   for (let i = 0; i <= temps.length - 1; i++) {
+//     forecastArr.push(`${temps[i]}°C in ${i + 1} ${i === 0 ? "day" : "days"}`);
+//   }
+//   return `... ${forecastArr.join(" ... ")} ...`;
+// };
+
+// console.log(printForecast(temps1));
+// console.log(printForecast(temps2));
