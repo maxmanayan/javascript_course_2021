@@ -70,3 +70,40 @@
 // };
 
 // console.log(calcAmplitudeNew(temperatures, temperatures2));
+
+// // Lesson 61 - Debugging with the Console and Breakpoints
+
+// const measureKelvin = function () {
+//   const measurement = {
+//     type: "temp",
+//     unit: "celsius",
+//     // value: Number(prompt("Degree celsius: ")),
+//     value: 10,
+//   };
+
+//   // console.table(measurement);
+//   const kelvin = measurement.value + 273;
+//   return kelvin;
+// };
+
+// console.log(measureKelvin());
+
+// const temperatures = [3, -2, -2, -1, "error", 9, 13, 17, 15, 14, 9, 5];
+// let temperatures2 = [1, 20, 4, 5, 7];
+
+// const calcAmplitudeBug = function (temp1, temp2) {
+//   let temperatures = temp1.concat(temp2);
+//   let max = temperatures[0];
+//   let min = temperatures[0];
+
+//   for (let i = 0; i <= temperatures.length - 1; i++) {
+//     let curTemp = temperatures[i];
+//     if (typeof curTemp !== "number") continue;
+
+//     if (curTemp > max) max = curTemp;
+//     if (curTemp < min) min = curTemp;
+//   }
+//   return max - min;
+// };
+
+// console.log(calcAmplitudeBug(temperatures, temperatures2));
