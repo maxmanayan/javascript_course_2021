@@ -6,6 +6,9 @@ const x = 23;
 
 if (x === 23) console.log("MJ");
 
-const calcAge = (birthYear) => 23;
+const calcAge = (birthYear) => 2021 - birthYear;
 
+console.log(calcAge(1993));
 // installed Prettier
+
+// installed Node JS and Live-Server
