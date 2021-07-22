@@ -31,46 +31,85 @@
 // const firstName = "Max";
 // calcAge(1996);
 
-// Lesson 95
+// // Lesson 95
 
-console.log(me);
-// console.log(job);
-// console.log(year);
+// console.log(me);
+// // console.log(job);
+// // console.log(year);
 
-var me = "Max";
-let job = "engineer";
-const year = 1991;
+// var me = "Max";
+// let job = "engineer";
+// const year = 1991;
 
-// Functions
+// // Functions
 
-console.log(addDecl(2, 3));
-// console.log(addExpr(2, 3));
-// console.log(addArrow(2, 3));
+// console.log(addDecl(2, 3));
+// // console.log(addExpr(2, 3));
+// // console.log(addArrow(2, 3));
 
-function addDecl(a, b) {
-  return a + b;
-}
+// function addDecl(a, b) {
+//   return a + b;
+// }
 
-const addExpr = function (a, b) {
-  return a + b;
+// const addExpr = function (a, b) {
+//   return a + b;
+// };
+
+// const addArrow = (a, b) => a + b;
+
+// // Hoisting Pitfall Example
+// console.log(numProducts);
+// if (!numProducts) deleteShoppingCart();
+
+// var numProducts = 10;
+
+// function deleteShoppingCart() {
+//   console.log("All products deleted!");
+// }
+
+// var x = 1;
+// let y = 2;
+// const z = 3;
+
+// console.log(x === window.x);
+// console.log(y === window.y);
+// console.log(z === window.z);
+
+// LESSON 97 - the this keyword
+console.log(this); // Window object
+
+const calcAge = function (birthYear) {
+  console.log(2021 - birthYear);
+  console.log(this); // undefined
 };
 
-const addArrow = (a, b) => a + b;
+calcAge(1997);
 
-// Hoisting Pitfall Example
-console.log(numProducts);
-if (!numProducts) deleteShoppingCart();
+const calcAgeArrow = (birthYear) => {
+  console.log(2021 - birthYear);
+  console.log(this); // Window object (lexical this - this of the parent scope)
+};
 
-var numProducts = 10;
+calcAgeArrow(1997);
 
-function deleteShoppingCart() {
-  console.log("All products deleted!");
-}
+const Max = {
+  year: 1997,
+  calcAge: function () {
+    console.log(this); // The Max Object
+    console.log(2021 - this.year);
+  },
+};
 
-var x = 1;
-let y = 2;
-const z = 3;
+Max.calcAge();
 
-console.log(x === window.x);
-console.log(y === window.y);
-console.log(z === window.z);
+const matilda = {
+  year: 2017,
+};
+
+matilda.calcAge = Max.calcAge;
+
+matilda.calcAge(); // this = Matilda Object
+
+const f = Max.calcAge;
+
+f(); // this = undefined
