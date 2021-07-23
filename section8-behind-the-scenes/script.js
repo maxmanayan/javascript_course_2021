@@ -75,41 +75,86 @@
 // console.log(y === window.y);
 // console.log(z === window.z);
 
-// LESSON 97 - the this keyword
-console.log(this); // Window object
+// // LESSON 97 - the this keyword
+// console.log(this); // Window object
 
-const calcAge = function (birthYear) {
-  console.log(2021 - birthYear);
-  console.log(this); // undefined
-};
+// const calcAge = function (birthYear) {
+//   console.log(2021 - birthYear);
+//   console.log(this); // undefined
+// };
 
-calcAge(1997);
+// calcAge(1997);
 
-const calcAgeArrow = (birthYear) => {
-  console.log(2021 - birthYear);
-  console.log(this); // Window object (lexical this - this of the parent scope)
-};
+// const calcAgeArrow = (birthYear) => {
+//   console.log(2021 - birthYear);
+//   console.log(this); // Window object (lexical this - this of the parent scope)
+// };
 
-calcAgeArrow(1997);
+// calcAgeArrow(1997);
 
-const Max = {
+// const Max = {
+//   year: 1997,
+//   calcAge: function () {
+//     console.log(this); // The Max Object
+//     console.log(2021 - this.year);
+//   },
+// };
+
+// Max.calcAge();
+
+// const matilda = {
+//   year: 2017,
+// };
+
+// matilda.calcAge = Max.calcAge;
+
+// matilda.calcAge(); // this = Matilda Object
+
+// const f = Max.calcAge;
+
+// f(); // this = undefined
+
+// LESSON 98 - Regular Functions vs. Arrow Functions
+const max = {
+  firstName: "Max",
   year: 1997,
   calcAge: function () {
     console.log(this); // The Max Object
     console.log(2021 - this.year);
+
+    // // Solution 1
+    // const self = this;
+    // const isMillenial = function () {
+    //   console.log(this); // undefined
+    //   console.log(self);
+    //   console.log(self.year >= 1981 && self.year <= 1996);
+    // };
+    // isMillenial();
+
+    // Solution 2
+    const isMillenial = () => {
+      console.log(this);
+      console.log(this.year >= 1981 && this.year <= 1996);
+    };
+    isMillenial();
   },
+
+  greet: () => console.log(`Hey ${this.firstName}`),
 };
 
-Max.calcAge();
+max.greet(); // Hey undefined
+max.calcAge();
 
-const matilda = {
-  year: 2017,
+const addExpr = function (a, b) {
+  console.log(arguments);
+  return a + b;
 };
 
-matilda.calcAge = Max.calcAge;
+addExpr(2, 5, 4, 7);
 
-matilda.calcAge(); // this = Matilda Object
+const addArrow = (a, b) => {
+  console.log(arguments);
+  a + b;
+};
 
-const f = Max.calcAge;
-
-f(); // this = undefined
+addArrow(2, 5, 4, 7);
