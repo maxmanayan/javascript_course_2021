@@ -159,7 +159,7 @@
 
 // addArrow(2, 5, 4, 7);
 
-// LESSON 99 - Primitives vs. Objects
+// LESSON 99 & 100 - Primitives vs. Objects
 let age = 30;
 let oldAge = age;
 age = 31;
@@ -176,3 +176,34 @@ friend.name = "Bill";
 
 console.log("Friend: ", friend);
 console.log("Me: ", me);
+
+let lastName = "Williams";
+let oldLastName = lastName;
+lastName = "Davis";
+console.log(lastName, oldLastName);
+
+const jessica = {
+  firstName: "Jessica",
+  lastName: "Williams",
+  age: 27,
+};
+const marriedJessica = jessica;
+marriedJessica.lastName = "Davis";
+
+console.log("Before marriage: ", jessica);
+console.log("After marriage: ", marriedJessica);
+
+const jessica2 = {
+  firstName: "Jessica",
+  lastName: "Williams",
+  age: 27,
+  family: ["Alice", "Bob"],
+};
+
+// Object.assign only creates a shadow copy -> creates new first-level object in heap, but inner objects are not duplicated
+const jessicaCopy = Object.assign({}, jessica2);
+jessicaCopy.lastName = "Davis";
+jessicaCopy.family.push("Mary");
+jessicaCopy.family.push("John");
+console.log("Before marriage: ", jessica2);
+console.log("After marriage: ", jessicaCopy);
