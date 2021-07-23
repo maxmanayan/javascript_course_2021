@@ -114,47 +114,65 @@
 
 // f(); // this = undefined
 
-// LESSON 98 - Regular Functions vs. Arrow Functions
-const max = {
-  firstName: "Max",
-  year: 1997,
-  calcAge: function () {
-    console.log(this); // The Max Object
-    console.log(2021 - this.year);
+// // LESSON 98 - Regular Functions vs. Arrow Functions
+// const max = {
+//   firstName: "Max",
+//   year: 1997,
+//   calcAge: function () {
+//     console.log(this); // The Max Object
+//     console.log(2021 - this.year);
 
-    // // Solution 1
-    // const self = this;
-    // const isMillenial = function () {
-    //   console.log(this); // undefined
-    //   console.log(self);
-    //   console.log(self.year >= 1981 && self.year <= 1996);
-    // };
-    // isMillenial();
+//     // // Solution 1
+//     // const self = this;
+//     // const isMillenial = function () {
+//     //   console.log(this); // undefined
+//     //   console.log(self);
+//     //   console.log(self.year >= 1981 && self.year <= 1996);
+//     // };
+//     // isMillenial();
 
-    // Solution 2
-    const isMillenial = () => {
-      console.log(this);
-      console.log(this.year >= 1981 && this.year <= 1996);
-    };
-    isMillenial();
-  },
+//     // Solution 2
+//     const isMillenial = () => {
+//       console.log(this);
+//       console.log(this.year >= 1981 && this.year <= 1996);
+//     };
+//     isMillenial();
+//   },
 
-  greet: () => console.log(`Hey ${this.firstName}`),
+//   greet: () => console.log(`Hey ${this.firstName}`),
+// };
+
+// max.greet(); // Hey undefined
+// max.calcAge();
+
+// const addExpr = function (a, b) {
+//   console.log(arguments);
+//   return a + b;
+// };
+
+// addExpr(2, 5, 4, 7);
+
+// const addArrow = (a, b) => {
+//   console.log(arguments);
+//   a + b;
+// };
+
+// addArrow(2, 5, 4, 7);
+
+// LESSON 99 - Primitives vs. Objects
+let age = 30;
+let oldAge = age;
+age = 31;
+console.log(age); // 31
+console.log(oldAge); // 30
+
+const me = {
+  name: "Max",
+  age: 24,
 };
 
-max.greet(); // Hey undefined
-max.calcAge();
+const friend = me;
+friend.name = "Bill";
 
-const addExpr = function (a, b) {
-  console.log(arguments);
-  return a + b;
-};
-
-addExpr(2, 5, 4, 7);
-
-const addArrow = (a, b) => {
-  console.log(arguments);
-  a + b;
-};
-
-addArrow(2, 5, 4, 7);
+console.log("Friend: ", friend);
+console.log("Me: ", me);
