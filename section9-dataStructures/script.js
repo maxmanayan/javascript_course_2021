@@ -47,6 +47,11 @@ const restaurant = {
       `Here is your delicious pasta with ${ing1}, ${ing2}, and ${ing3}`
     );
   },
+
+  orderPizza: function (mainIng, ...otherIngs) {
+    console.log(mainIng);
+    console.log(otherIngs);
+  },
 };
 
 // // LESSON 102 - Destructuring Arrays
@@ -135,52 +140,91 @@ const restaurant = {
 //   starterIndex: 2,
 // });
 
-// Lesson 105 - The Spread Operator (...)
+// // Lesson 105 - The Spread Operator (...)
 
-const arr = [7, 8, 9];
-const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
-console.log(badNewArr);
+// const arr = [7, 8, 9];
+// const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+// console.log(badNewArr);
 
-// spread operator unpacks array into new array
-const goodNewArr = [1, 2, ...arr];
-console.log(goodNewArr);
+// // spread operator unpacks array into new array
+// const goodNewArr = [1, 2, ...arr];
+// console.log(goodNewArr);
 
-const newMenu = [...restaurant.mainMenu, "Gnocchi"];
-console.log(newMenu);
+// const newMenu = [...restaurant.mainMenu, "Gnocchi"];
+// console.log(newMenu);
 
-// Shallow copy of array
-const mainMenuCopy = [...restaurant.mainMenu];
-console.log(mainMenuCopy);
+// // Shallow copy of array
+// const mainMenuCopy = [...restaurant.mainMenu];
+// console.log(mainMenuCopy);
 
-// Join 2 arrays
-const wholeMenu = [...restaurant.mainMenu, ...restaurant.starterMenu];
-console.log(wholeMenu);
+// // Join 2 arrays
+// const wholeMenu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+// console.log(wholeMenu);
 
-// strings are iterable
-const str = "Max";
-const letters = [...str, " ", "M."];
-console.log(letters);
+// // strings are iterable
+// const str = "Max";
+// const letters = [...str, " ", "M."];
+// console.log(letters);
 
-// orderPasta()
-const ingredients = [
-  // prompt("Let's make pasta! Ingredient 1?"),
-  // prompt("Ingredient 2?"),
-  // prompt("Ingredient 3?"),
+// // orderPasta()
+// const ingredients = [
+//   // prompt("Let's make pasta! Ingredient 1?"),
+//   // prompt("Ingredient 2?"),
+//   // prompt("Ingredient 3?"),
+// ];
+
+// console.log(ingredients);
+
+// // Old way
+// restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
+// // Better way
+// restaurant.orderPasta(...ingredients);
+
+// // Shallow Copy of Objects
+// const newRestaurant = { founder: "Giovanni", ...restaurant, foundedIn: "1985" };
+// console.log(restaurant);
+// console.log(newRestaurant);
+
+// const restaurantCopy = { ...restaurant };
+// restaurantCopy.name = "Ristorante Roma";
+// console.log(restaurantCopy.name);
+// console.log(restaurant.name);
+
+// Lesson 106 - Rest Pattern and Parameters
+// ARRAYS
+// SPREAD, because on RIGHT side of =
+const arr = [1, 2, ...[3, 4]];
+
+// REST, because on LEFT side of =
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(a, b, others);
+
+// we can use both spread and rest in the same line
+const [pizza, , risotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
 ];
+console.log(pizza, risotto, otherFood);
 
-console.log(ingredients);
+// OBJECTS
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(weekdays);
 
-// Old way
-restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
-// Better way
-restaurant.orderPasta(...ingredients);
+// FUNCTIONS
+const add = function (...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+  console.log(sum);
+};
 
-// Shallow Copy of Objects
-const newRestaurant = { founder: "Giovanni", ...restaurant, foundedIn: "1985" };
-console.log(restaurant);
-console.log(newRestaurant);
+add(2, 3);
+add(2, 3, 7, 2);
+add(2, 3, 7, 2, 6, 8, 11);
 
-const restaurantCopy = { ...restaurant };
-restaurantCopy.name = "Ristorante Roma";
-console.log(restaurantCopy.name);
-console.log(restaurant.name);
+const x = [23, 5, 7];
+add(...x);
+
+restaurant.orderPizza("pepperoni", "mushrooms", "olives", "spinach");
+restaurant.orderPizza("sausage");
