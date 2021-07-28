@@ -229,35 +229,46 @@ const restaurant = {
 // restaurant.orderPizza("pepperoni", "mushrooms", "olives", "spinach");
 // restaurant.orderPizza("sausage");
 
-// Lesson 107 - Short Circuiting (&& and ||)
+// // Lesson 107 - Short Circuiting (&& and ||)
 
-// Logical Operators can...
-// use ANY data type, return ANY data type, short-circuiting
+// // Logical Operators can...
+// // use ANY data type, return ANY data type, short-circuiting
 
-// for OR operator (||) - first truthy value is returned (short circuits when first truthy value is met)
-console.log("-------- OR --------");
-console.log(3 || "Jonas");
-console.log("" || "Jonas");
-console.log(true || 0);
-console.log(undefined || null);
-console.log(undefined || 0 || "" || "Hello" || 23 || null);
+// // for OR operator (||) - first truthy value is returned (short circuits when first truthy value is met)
+// console.log("-------- OR --------");
+// console.log(3 || "Jonas");
+// console.log("" || "Jonas");
+// console.log(true || 0);
+// console.log(undefined || null);
+// console.log(undefined || 0 || "" || "Hello" || 23 || null);
 
-// restaurant.numGuests = 23;
+// // restaurant.numGuests = 23;
 
-const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
-console.log(guests1);
+// const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+// console.log(guests1);
+
+// const guests2 = restaurant.numGuests || 10;
+// console.log(guests2);
+
+// // for AND operator (||) - first falsey value is returned (short circuits when first falsey value is met)
+// console.log("-------- AND --------");
+// console.log(0 && "Max");
+// console.log(7 && "Max");
+// console.log(7 && "Max" && null && true);
+
+// if (restaurant.orderPizza) {
+//   restaurant.orderPizza("mushrooms", "spinach");
+// }
+
+// restaurant.orderPizza && restaurant.orderPizza("mushrooms", "spinach");
+
+// Lesson 108 - The Nullish Coalescing Operator (??)
+restaurant.numGuests = 0;
 
 const guests2 = restaurant.numGuests || 10;
 console.log(guests2);
 
-// for AND operator (||) - first falsey value is returned (short circuits when first falsey value is met)
-console.log("-------- AND --------");
-console.log(0 && "Max");
-console.log(7 && "Max");
-console.log(7 && "Max" && null && true);
-
-if (restaurant.orderPizza) {
-  restaurant.orderPizza("mushrooms", "spinach");
-}
-
-restaurant.orderPizza && restaurant.orderPizza("mushrooms", "spinach");
+// Nullish (??): null or undefined (NOT 0 or '')
+// will only short circuit if there is a 0 or undefined met
+const guestsCorrect = restaurant.numGuests ?? 10;
+console.log(guestsCorrect);
