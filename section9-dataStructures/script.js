@@ -190,41 +190,74 @@ const restaurant = {
 // console.log(restaurantCopy.name);
 // console.log(restaurant.name);
 
-// Lesson 106 - Rest Pattern and Parameters
-// ARRAYS
-// SPREAD, because on RIGHT side of =
-const arr = [1, 2, ...[3, 4]];
+// // Lesson 106 - Rest Pattern and Parameters
+// // ARRAYS
+// // SPREAD, because on RIGHT side of =
+// const arr = [1, 2, ...[3, 4]];
 
-// REST, because on LEFT side of =
-const [a, b, ...others] = [1, 2, 3, 4, 5];
-console.log(a, b, others);
+// // REST, because on LEFT side of =
+// const [a, b, ...others] = [1, 2, 3, 4, 5];
+// console.log(a, b, others);
 
-// we can use both spread and rest in the same line
-const [pizza, , risotto, ...otherFood] = [
-  ...restaurant.mainMenu,
-  ...restaurant.starterMenu,
-];
-console.log(pizza, risotto, otherFood);
+// // we can use both spread and rest in the same line
+// const [pizza, , risotto, ...otherFood] = [
+//   ...restaurant.mainMenu,
+//   ...restaurant.starterMenu,
+// ];
+// console.log(pizza, risotto, otherFood);
 
-// OBJECTS
-const { sat, ...weekdays } = restaurant.openingHours;
-console.log(weekdays);
+// // OBJECTS
+// const { sat, ...weekdays } = restaurant.openingHours;
+// console.log(weekdays);
 
-// FUNCTIONS
-const add = function (...numbers) {
-  let sum = 0;
-  for (let i = 0; i < numbers.length; i++) {
-    sum += numbers[i];
-  }
-  console.log(sum);
-};
+// // FUNCTIONS
+// const add = function (...numbers) {
+//   let sum = 0;
+//   for (let i = 0; i < numbers.length; i++) {
+//     sum += numbers[i];
+//   }
+//   console.log(sum);
+// };
 
-add(2, 3);
-add(2, 3, 7, 2);
-add(2, 3, 7, 2, 6, 8, 11);
+// add(2, 3);
+// add(2, 3, 7, 2);
+// add(2, 3, 7, 2, 6, 8, 11);
 
-const x = [23, 5, 7];
-add(...x);
+// const x = [23, 5, 7];
+// add(...x);
 
-restaurant.orderPizza("pepperoni", "mushrooms", "olives", "spinach");
-restaurant.orderPizza("sausage");
+// restaurant.orderPizza("pepperoni", "mushrooms", "olives", "spinach");
+// restaurant.orderPizza("sausage");
+
+// Lesson 107 - Short Circuiting (&& and ||)
+
+// Logical Operators can...
+// use ANY data type, return ANY data type, short-circuiting
+
+// for OR operator (||) - first truthy value is returned (short circuits when first truthy value is met)
+console.log("-------- OR --------");
+console.log(3 || "Jonas");
+console.log("" || "Jonas");
+console.log(true || 0);
+console.log(undefined || null);
+console.log(undefined || 0 || "" || "Hello" || 23 || null);
+
+// restaurant.numGuests = 23;
+
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1);
+
+const guests2 = restaurant.numGuests || 10;
+console.log(guests2);
+
+// for AND operator (||) - first falsey value is returned (short circuits when first falsey value is met)
+console.log("-------- AND --------");
+console.log(0 && "Max");
+console.log(7 && "Max");
+console.log(7 && "Max" && null && true);
+
+if (restaurant.orderPizza) {
+  restaurant.orderPizza("mushrooms", "spinach");
+}
+
+restaurant.orderPizza && restaurant.orderPizza("mushrooms", "spinach");
