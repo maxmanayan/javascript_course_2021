@@ -5,6 +5,22 @@ const flights =
   "_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30";
 
 // Data needed for first part of the section
+
+const openingHours = {
+  thu: {
+    open: 12,
+    close: 22,
+  },
+  fri: {
+    open: 11,
+    close: 23,
+  },
+  sat: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
+
 const restaurant = {
   name: "Classico Italiano",
   location: "Via Angelo Tavanti 23, Firenze, Italy",
@@ -16,27 +32,11 @@ const restaurant = {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
 
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0, // Open 24 hours
-      close: 24,
-    },
-  },
+  // ES6 enhanced object literals
+  openingHours,
 
-  orderDelivery: function ({
-    starterIndex = 1,
-    mainIndex = 0,
-    time = "6:30pm",
-    address,
-  }) {
+  // ES6 do not have to write function keyword
+  orderDelivery({ starterIndex = 1, mainIndex = 0, time = "6:30pm", address }) {
     console.log(
       `Order Received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} by ${time}`
     );
@@ -360,16 +360,18 @@ const game = {
 // team1 < team2 && console.log(`${game.team1} is more likely to win!`);
 // team1 > team2 && console.log(`${game.team2} is more likely to win!`);
 
-// Lesson 110 - Looping Arrays: The for-of Loop
-const wholeMenu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+// // Lesson 110 - Looping Arrays: The for-of Loop
+// const wholeMenu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 
-for (const item of wholeMenu) console.log(item);
+// for (const item of wholeMenu) console.log(item);
 
-for (const item of wholeMenu.entries()) {
-  console.log(item);
-}
+// for (const item of wholeMenu.entries()) {
+//   console.log(item);
+// }
 
-// can destructure entries() array
-for (const [i, el] of wholeMenu.entries()) {
-  console.log(`${i + 1}: ${el}`);
-}
+// // can destructure entries() array
+// for (const [i, el] of wholeMenu.entries()) {
+//   console.log(`${i + 1}: ${el}`);
+// }
+
+// Lesson 111 - Enhanced Object Literals
