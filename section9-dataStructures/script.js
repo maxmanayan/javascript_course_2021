@@ -328,34 +328,48 @@ const game = {
   },
 };
 
-// 1
-// const players1 = [...game.players[0]];
-// const players2 = [...game.players[1]];
-const [players1, players2] = game.players;
-console.log(players1, players2);
+// // 1
+// // const players1 = [...game.players[0]];
+// // const players2 = [...game.players[1]];
+// const [players1, players2] = game.players;
+// console.log(players1, players2);
 
-// 2
-const [gk, ...fieldPlayers] = players1;
-console.log(gk, fieldPlayers);
+// // 2
+// const [gk, ...fieldPlayers] = players1;
+// console.log(gk, fieldPlayers);
 
-// 3
-const allPlayers = [...players1, ...players2];
-console.log(allPlayers);
+// // 3
+// const allPlayers = [...players1, ...players2];
+// console.log(allPlayers);
 
-// 4
-const players1Final = [...players1, "Thiago", "Coutinho", "Perisic"];
-console.log(players1Final);
+// // 4
+// const players1Final = [...players1, "Thiago", "Coutinho", "Perisic"];
+// console.log(players1Final);
 
-// 5
-const { team1, x: draw, team2 } = game.odds;
-console.log(team1, draw, team2);
+// // 5
+// const { team1, x: draw, team2 } = game.odds;
+// console.log(team1, draw, team2);
 
-// 6
-const printGoals = function (...playerNames) {
-  console.log(...playerNames, playerNames.length);
-};
-printGoals(...game.scored);
+// // 6
+// const printGoals = function (...playerNames) {
+//   console.log(...playerNames, playerNames.length);
+// };
+// printGoals(...game.scored);
 
-// 7
-team1 < team2 && console.log(`${game.team1} is more likely to win!`);
-team1 > team2 && console.log(`${game.team2} is more likely to win!`);
+// // 7
+// team1 < team2 && console.log(`${game.team1} is more likely to win!`);
+// team1 > team2 && console.log(`${game.team2} is more likely to win!`);
+
+// Lesson 110 - Looping Arrays: The for-of Loop
+const wholeMenu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+for (const item of wholeMenu) console.log(item);
+
+for (const item of wholeMenu.entries()) {
+  console.log(item);
+}
+
+// can destructure entries() array
+for (const [i, el] of wholeMenu.entries()) {
+  console.log(`${i + 1}: ${el}`);
+}
