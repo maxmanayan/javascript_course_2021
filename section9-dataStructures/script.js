@@ -374,4 +374,33 @@ const game = {
 //   console.log(`${i + 1}: ${el}`);
 // }
 
-// Lesson 111 - Enhanced Object Literals
+// Lesson 112 - Optional Chaining (?.)
+
+if (restaurant.openingHours && restaurant.openingHours.mon)
+  console.log(restaurant.openingHours.mon.open);
+
+// WITH optional chaining
+// returns early if value before ?. is null or undefined
+console.log(restaurant.openingHours.mon?.open);
+
+// Example
+const days = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+
+for (const day of days) {
+  const open = restaurant.openingHours[day]?.open ?? "closed";
+  console.log(`On ${day}, we open at ${open}! `);
+}
+
+// Methods
+console.log(restaurant.order?.(0, 1) ?? "Method does not exist");
+console.log(restaurant.orderRisotto?.(0, 1) ?? "Method does not exist");
+
+// Arrays
+const users = [{ name: "Max", email: "hello@max.io" }];
+
+// old way
+if (users.length > 0) console.log(users[0].name);
+else console.log("user array empty");
+
+// with optional chaining and nullish coalescing
+console.log(users[0]?.name ?? "user array empty");
