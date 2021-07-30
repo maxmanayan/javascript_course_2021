@@ -374,33 +374,59 @@ const game = {
 //   console.log(`${i + 1}: ${el}`);
 // }
 
-// Lesson 112 - Optional Chaining (?.)
+// // Lesson 112 - Optional Chaining (?.)
 
-if (restaurant.openingHours && restaurant.openingHours.mon)
-  console.log(restaurant.openingHours.mon.open);
+// if (restaurant.openingHours && restaurant.openingHours.mon)
+//   console.log(restaurant.openingHours.mon.open);
 
-// WITH optional chaining
-// returns early if value before ?. is null or undefined
-console.log(restaurant.openingHours.mon?.open);
+// // WITH optional chaining
+// // returns early if value before ?. is null or undefined
+// console.log(restaurant.openingHours.mon?.open);
 
-// Example
-const days = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+// // Example
+// const days = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
 
-for (const day of days) {
-  const open = restaurant.openingHours[day]?.open ?? "closed";
-  console.log(`On ${day}, we open at ${open}! `);
-}
+// for (const day of days) {
+//   const open = restaurant.openingHours[day]?.open ?? "closed";
+//   console.log(`On ${day}, we open at ${open}! `);
+// }
 
-// Methods
-console.log(restaurant.order?.(0, 1) ?? "Method does not exist");
-console.log(restaurant.orderRisotto?.(0, 1) ?? "Method does not exist");
+// // Methods
+// console.log(restaurant.order?.(0, 1) ?? "Method does not exist");
+// console.log(restaurant.orderRisotto?.(0, 1) ?? "Method does not exist");
 
-// Arrays
-const users = [{ name: "Max", email: "hello@max.io" }];
+// // Arrays
+// const users = [{ name: "Max", email: "hello@max.io" }];
 
-// old way
-if (users.length > 0) console.log(users[0].name);
-else console.log("user array empty");
+// // old way
+// if (users.length > 0) console.log(users[0].name);
+// else console.log("user array empty");
 
-// with optional chaining and nullish coalescing
-console.log(users[0]?.name ?? "user array empty");
+// // with optional chaining and nullish coalescing
+// console.log(users[0]?.name ?? "user array empty");
+
+// // Lesson 113 - Looping Objects: Object Keys, Values, and Entries
+
+// // Looping over object KEYS
+// const properties = Object.keys(openingHours);
+// console.log(properties);
+
+// let openStr = `We are open on ${properties.length} days: `;
+
+// for (const day of properties) {
+//   openStr += `${day}, `;
+// }
+
+// console.log(openStr);
+
+// // Looping over VALUES (similar to keys)
+// let values = Object.values(openingHours);
+// console.log(values);
+
+// // Looping over both KEYS and VALUES (entire object)
+// const entries = Object.entries(openingHours);
+// console.log(entries);
+
+// for (const [key, { open, close }] of entries) {
+//   console.log(`On ${key}, we open at ${open} and close at ${close}!`);
+// }
