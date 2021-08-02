@@ -528,3 +528,43 @@ const game = {
 // console.log(staffUnique);
 
 // console.log(new Set("maximillianmanayan").size);
+
+// Lesson 116 - Maps: Fundamentals
+const eatery = new Map();
+// adding new key/values to map
+eatery.set("name", "Classico Italiano");
+eatery.set(1, "Firenze, Italy");
+console.log(eatery.set(2, "Lisbon, Portugal"));
+
+// can chain set method
+
+eatery
+  .set("categories", ["Italian", "Pizzeria", "Vegetarian", "Organic"])
+  .set("open", 11)
+  .set("close", 23)
+  .set(true, "We are open :D")
+  .set(false, "We are closed :(");
+
+console.log(eatery);
+
+console.log(eatery.get("name"));
+console.log(eatery.get(true));
+console.log(eatery.get(1));
+
+// using boolean keys to check if open
+const time = 15;
+console.log(
+  eatery.get(time > eatery.get("open") && time < eatery.get("close"))
+);
+
+// more methods on maps
+console.log(eatery.has("categories"));
+eatery.delete(2);
+// eatery.clear();
+const arr = [1, 2];
+eatery.set(arr, "Test");
+eatery.set(document.querySelector("h1"), "Heading");
+console.log(eatery);
+console.log(eatery.size);
+
+console.log(eatery.get(arr));
