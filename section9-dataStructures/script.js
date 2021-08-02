@@ -487,3 +487,44 @@ const game = {
 // }
 
 // console.log(scorers);
+
+// // Lesson 115 - Sets
+// const ordersSet = new Set([
+//   "Risotto",
+//   "Pasta",
+//   "Pizza",
+//   "Pizza",
+//   "Pasta",
+//   "Pizza",
+// ]);
+
+// console.log(ordersSet);
+
+// console.log(new Set("Maxx"));
+
+// // find size of set
+// console.log(ordersSet.size);
+// // find if certain element is in set
+// console.log(ordersSet.has("Pizza"));
+// console.log(ordersSet.has("Bread"));
+// // add to a set
+// ordersSet.add("Garlic Bread");
+// ordersSet.add("Garlic Bread");
+// console.log(ordersSet);
+// // delete item from set
+// ordersSet.delete("Risotto"); // case-sensitive
+// console.log(ordersSet);
+// // delete all elements in a set
+// // ordersSet.clear();
+// // console.log(ordersSet);
+
+// // looping over set
+// for (const item of ordersSet) console.log(item);
+
+// // Example - really useful when we need unique values from arrays
+// const staff = ["Waiter", "Waiter", "Manager", "Host", "Chef", "Chef", "Busboy"];
+
+// const staffUnique = [...new Set(staff)];
+// console.log(staffUnique);
+
+// console.log(new Set("maximillianmanayan").size);
