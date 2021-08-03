@@ -569,39 +569,42 @@ const game = {
 
 // console.log(eatery.get(arr));
 
-// Lesson 117 - Maps (Iteration)
-// another method of setting maps - nested arrays
-const question = new Map([
-  ["question", "What is the best programming language in the world?"],
-  [1, "C++"],
-  [2, "Java"],
-  [3, "JavaScript"],
-  ["correct answer", 3],
-  [true, "Correct!"],
-  [false, "Try again!"],
-]);
-console.log(question);
+// // Lesson 117 - Maps (Iteration)
+// // another method of setting maps - nested arrays
+// const question = new Map([
+//   ["question", "What is the best programming language in the world?"],
+//   [1, "C++"],
+//   [2, "Java"],
+//   [3, "JavaScript"],
+//   ["correct answer", 3],
+//   [true, "Correct!"],
+//   [false, "Try again!"],
+// ]);
+// console.log(question);
 
-// converting objects to maps - use .entries
-console.log(Object.entries(openingHours));
-const hoursMap = new Map(Object.entries(openingHours));
-console.log(hoursMap);
+// // converting objects to maps - use .entries
+// console.log(Object.entries(openingHours));
+// const hoursMap = new Map(Object.entries(openingHours));
+// console.log(hoursMap);
 
-// quiz app
-console.log(question.get("question"));
+// // quiz app
+// console.log(question.get("question"));
 
-for (const [key, value] of question) {
-  if (typeof key === "number") {
-    console.log(`Answer ${key}: ${value}`);
-  }
-}
+// for (const [key, value] of question) {
+//   if (typeof key === "number") {
+//     console.log(`Answer ${key}: ${value}`);
+//   }
+// }
 
-const answer = Number(prompt("Your answer: "));
-console.log(answer);
+// const answer = Number(prompt("Your answer: "));
+// console.log(answer);
 
-console.log(question.get(answer === question.get("correct answer")));
+// console.log(question.get(answer === question.get("correct answer")));
 
-// convert map to array
-console.log([...question]);
-console.log([...question.keys()]);
-console.log([...question.values()]);
+// // convert map to array
+// console.log([...question]);
+// console.log([...question.keys()]);
+// console.log([...question.values()]);
+
+
+// Lesson 118: Which Data Structure to Use
