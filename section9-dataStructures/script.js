@@ -529,42 +529,79 @@ const game = {
 
 // console.log(new Set("maximillianmanayan").size);
 
-// Lesson 116 - Maps: Fundamentals
-const eatery = new Map();
-// adding new key/values to map
-eatery.set("name", "Classico Italiano");
-eatery.set(1, "Firenze, Italy");
-console.log(eatery.set(2, "Lisbon, Portugal"));
+// // Lesson 116 - Maps: Fundamentals
+// const eatery = new Map();
+// // adding new key/values to map
+// eatery.set("name", "Classico Italiano");
+// eatery.set(1, "Firenze, Italy");
+// console.log(eatery.set(2, "Lisbon, Portugal"));
 
-// can chain set method
+// // can chain set method
 
-eatery
-  .set("categories", ["Italian", "Pizzeria", "Vegetarian", "Organic"])
-  .set("open", 11)
-  .set("close", 23)
-  .set(true, "We are open :D")
-  .set(false, "We are closed :(");
+// eatery
+//   .set("categories", ["Italian", "Pizzeria", "Vegetarian", "Organic"])
+//   .set("open", 11)
+//   .set("close", 23)
+//   .set(true, "We are open :D")
+//   .set(false, "We are closed :(");
 
-console.log(eatery);
+// console.log(eatery);
 
-console.log(eatery.get("name"));
-console.log(eatery.get(true));
-console.log(eatery.get(1));
+// console.log(eatery.get("name"));
+// console.log(eatery.get(true));
+// console.log(eatery.get(1));
 
-// using boolean keys to check if open
-const time = 15;
-console.log(
-  eatery.get(time > eatery.get("open") && time < eatery.get("close"))
-);
+// // using boolean keys to check if open
+// const time = 15;
+// console.log(
+//   eatery.get(time > eatery.get("open") && time < eatery.get("close"))
+// );
 
-// more methods on maps
-console.log(eatery.has("categories"));
-eatery.delete(2);
-// eatery.clear();
-const arr = [1, 2];
-eatery.set(arr, "Test");
-eatery.set(document.querySelector("h1"), "Heading");
-console.log(eatery);
-console.log(eatery.size);
+// // more methods on maps
+// console.log(eatery.has("categories"));
+// eatery.delete(2);
+// // eatery.clear();
+// const arr = [1, 2];
+// eatery.set(arr, "Test");
+// eatery.set(document.querySelector("h1"), "Heading");
+// console.log(eatery);
+// console.log(eatery.size);
 
-console.log(eatery.get(arr));
+// console.log(eatery.get(arr));
+
+// Lesson 117 - Maps (Iteration)
+// another method of setting maps - nested arrays
+const question = new Map([
+  ["question", "What is the best programming language in the world?"],
+  [1, "C++"],
+  [2, "Java"],
+  [3, "JavaScript"],
+  ["correct answer", 3],
+  [true, "Correct!"],
+  [false, "Try again!"],
+]);
+console.log(question);
+
+// converting objects to maps - use .entries
+console.log(Object.entries(openingHours));
+const hoursMap = new Map(Object.entries(openingHours));
+console.log(hoursMap);
+
+// quiz app
+console.log(question.get("question"));
+
+for (const [key, value] of question) {
+  if (typeof key === "number") {
+    console.log(`Answer ${key}: ${value}`);
+  }
+}
+
+const answer = Number(prompt("Your answer: "));
+console.log(answer);
+
+console.log(question.get(answer === question.get("correct answer")));
+
+// convert map to array
+console.log([...question]);
+console.log([...question.keys()]);
+console.log([...question.values()]);
