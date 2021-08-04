@@ -661,42 +661,105 @@ const gameEvents = new Map([
 //   );
 // }
 
-// Lesson 120 - Working with Strings pt. 1
+// // Lesson 120 - Working with Strings pt. 1
 
 const airline = "TAP Air Portugal";
 const plane = "A320";
 
-console.log(plane[0]);
-console.log(plane[1]);
-console.log(plane[2]);
-console.log("B737"[0]);
+// console.log(plane[0]);
+// console.log(plane[1]);
+// console.log(plane[2]);
+// console.log("B737"[0]);
 
-console.log(airline.length);
-console.log("B737".length);
+// console.log(airline.length);
+// console.log("B737".length);
 
-console.log(airline.indexOf("r"));
-console.log(airline.lastIndexOf("r"));
-console.log(airline.indexOf("portugal")); // case sensitive
+// console.log(airline.indexOf("r"));
+// console.log(airline.lastIndexOf("r"));
+// console.log(airline.indexOf("portugal")); // case sensitive
 
-console.log(airline.slice(4));
-console.log(airline.slice(4, 7));
+// console.log(airline.slice(4));
+// console.log(airline.slice(4, 7));
 
-console.log(airline.slice(0, airline.indexOf(" ")));
-console.log(airline.slice(airline.lastIndexOf("P")));
+// console.log(airline.slice(0, airline.indexOf(" ")));
+// console.log(airline.slice(airline.lastIndexOf("P")));
 
-console.log(airline.slice(-2));
-console.log(airline.slice(1, -1));
+// console.log(airline.slice(-2));
+// console.log(airline.slice(1, -1));
 
-const checkMiddleSeat = function (seat) {
-  // B and E are middle seats
-  let seatLetter = seat.slice(-1);
-  if (seatLetter === "B" || seatLetter === "E") {
-    return true;
-  } else {
-    return false;
-  }
-};
+// const checkMiddleSeat = function (seat) {
+//   // B and E are middle seats
+//   let seatLetter = seat.slice(-1);
+//   if (seatLetter === "B" || seatLetter === "E") {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// };
 
-console.log(checkMiddleSeat("11B"));
-console.log(checkMiddleSeat("23C"));
-console.log(checkMiddleSeat("3E"));
+// console.log(checkMiddleSeat("11B"));
+// console.log(checkMiddleSeat("23C"));
+// console.log(checkMiddleSeat("3E"));
+
+// // Lesson 121 - Working with Strings pt. 2
+
+// console.log(airline.toUpperCase());
+// console.log(airline.toLowerCase());
+
+// // Fix capitalization in name
+// const passenger = "jOnAS";
+// const passengerLower = passenger.toLowerCase();
+// const passengerCorrect = passenger[0].toUpperCase() + passengerLower.slice(1);
+// console.log(passengerCorrect);
+
+// // Comparing emails
+// const email = "hello@jonas.io";
+// const loginEmail = "     Hello@Jonas.Io  \n   ";
+
+// // const lowerEmail = loginEmail.toLowerCase();
+// // const trimmedEmail = lowerEmail.trim();
+// // console.log(trimmedEmail);
+
+// const normalizedEmail = loginEmail.toLowerCase().trim();
+// console.log(normalizedEmail);
+// console.log(email === normalizedEmail);
+
+// // replacing
+// const priceGB = "288,97 GBP";
+// const priceUS = priceGB.replace("GBP", "USD").replace(",", ".");
+// console.log(priceUS);
+
+// const announcement =
+//   "All passengers come to boarding door 23. Boarding door 23!";
+
+// console.log(announcement.replace("door", "gate")); // only replaces first 'door'
+
+// console.log(announcement.replaceAll("door", "gate")); // replaces all 'door's
+
+// // regular expressions
+// console.log(announcement.replace(/door/g, "gate")); // replaces all 'door's
+
+// // Returns Booleans
+// const newPlane = "Airbus A320neo";
+// console.log(newPlane.includes("A320"));
+// console.log(newPlane.includes("Boeing"));
+// console.log(newPlane.startsWith("Air"));
+
+// if (newPlane.startsWith("Airbus") && newPlane.endsWith("neo")) {
+//   console.log("Part of the NEW Airbus family!");
+// }
+
+// // Practice exercise
+// const checkBaggage = function (items) {
+//   // no weapons
+//   const baggage = items.toLowerCase();
+//   if (baggage.includes("gun") || baggage.includes("knife")) {
+//     console.log("Items not allowed!");
+//   } else {
+//     console.log("Looks good!");
+//   }
+// };
+
+// checkBaggage("I have a laptop, some Food, and a pocket KNife");
+// checkBaggage("I have socks and a Camera");
+// checkBaggage("I got some snacks and a Gun for Protection");
