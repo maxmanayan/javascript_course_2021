@@ -764,52 +764,97 @@ const plane = "A320";
 // checkBaggage("I have socks and a Camera");
 // checkBaggage("I got some snacks and a Gun for Protection");
 
-// Lesson 122 - Working with Strings pt 3
-// split() and join()
-console.log("a+very+nice+string".split("+"));
-console.log("Jonas Schmedtmann".split(" "));
+// // Lesson 122 - Working with Strings pt 3
+// // split() and join()
+// console.log("a+very+nice+string".split("+"));
+// console.log("Jonas Schmedtmann".split(" "));
 
-const [firstName, lastName] = "Jonas Schmedtmann".split(" ");
-console.log(firstName, lastName);
+// const [firstName, lastName] = "Jonas Schmedtmann".split(" ");
+// console.log(firstName, lastName);
 
-const newName = ["Mr.", firstName, lastName.toUpperCase()].join(" ");
-console.log(newName);
+// const newName = ["Mr.", firstName, lastName.toUpperCase()].join(" ");
+// console.log(newName);
 
-const capitalize = function (name) {
-  let nameCap = name
-    .split(" ")
-    .map((n) => `${n[0].toUpperCase()}${n.slice(1)}`)
-    .join(" ");
+// const capitalize = function (name) {
+//   let nameCap = name
+//     .split(" ")
+//     .map((n) => `${n[0].toUpperCase()}${n.slice(1)}`)
+//     .join(" ");
 
-  return nameCap;
+//   return nameCap;
+// };
+
+// const passenger = "jessica ann smith davis";
+
+// console.log(capitalize(passenger));
+// console.log(capitalize("max manayan"));
+
+// // Padding - padStart() and padEnd()
+// const message = "Go to Gate 23!";
+// console.log(message.padStart(20, "+").padEnd(30, "="));
+
+// const maskCreditCard = function (number) {
+//   const str = number + "";
+//   const maskedNumber = str.slice(-4).padStart(str.length, "*");
+//   return maskedNumber;
+// };
+
+// console.log(maskCreditCard(1234567891011121));
+// console.log(maskCreditCard("3235323832353235"));
+
+// // Repeat - repeat()
+// const delayMessage = "Severe Weather ... All Departures Delayed ... ";
+// console.log(delayMessage.repeat(5));
+
+// const planesInQueue = function (n) {
+//   return `There are ${n} planes waiting to depart ${"✈️".repeat(n)}`;
+// };
+
+// console.log(planesInQueue(3));
+// console.log(planesInQueue(5));
+// console.log(planesInQueue(12));
+
+// Lesson 123 - Coding Challenge #4
+/* 
+Write a program that receives a list of variable names written in underscore_case and convert them to camelCase.
+The input will come from a textarea inserted into the DOM (see code below), and conversion will happen when the button is pressed.
+THIS TEST DATA (pasted to textarea)
+underscore_case
+ first_name
+Some_Variable 
+  calculate_AGE
+delayed_departure
+SHOULD PRODUCE THIS OUTPUT (5 separate console.log outputs)
+underscoreCase      ✅
+firstName           ✅✅
+someVariable        ✅✅✅
+calculateAge        ✅✅✅✅
+delayedDeparture    ✅✅✅✅✅
+HINT 1: Remember which character defines a new line in the textarea 😉
+HINT 2: The solution only needs to work for a variable made out of 2 words, like a_b
+HINT 3: Start without worrying about the ✅. Tackle that only after you have the variable name conversion working 😉
+HINT 4: This challenge is difficult on purpose, so start watching the solution in case you're stuck. Then pause and continue!
+Afterwards, test with your own test data!
+GOOD LUCK 😀
+*/
+
+document.body.append(document.createElement("textarea"));
+document.body.append(document.createElement("button"));
+
+const switchCase = function (input) {
+  let camelCaseArr = input.split("\n").map((word, i) => {
+    let removedSnake = word.trim().split("_");
+    let firstWord = removedSnake[0];
+    let alteredSecondWord =
+      removedSnake[1][0].toUpperCase() + removedSnake[1].slice(1).toLowerCase();
+    let camelNow = firstWord + alteredSecondWord;
+    return `${camelNow.padEnd(20, " ")}${"✅".repeat(i + 1)}`;
+  });
+  return camelCaseArr.join("\n");
 };
 
-const passenger = "jessica ann smith davis";
-
-console.log(capitalize(passenger));
-console.log(capitalize("max manayan"));
-
-// Padding - padStart() and padEnd()
-const message = "Go to Gate 23!";
-console.log(message.padStart(20, "+").padEnd(30, "="));
-
-const maskCreditCard = function (number) {
-  const str = number + "";
-  const maskedNumber = str.slice(-4).padStart(str.length, "*");
-  return maskedNumber;
-};
-
-console.log(maskCreditCard(1234567891011121));
-console.log(maskCreditCard("3235323832353235"));
-
-// Repeat - repeat()
-const delayMessage = "Severe Weather ... All Departures Delayed ... ";
-console.log(delayMessage.repeat(5));
-
-const planesInQueue = function (n) {
-  return `There are ${n} planes waiting to depart ${"✈️".repeat(n)}`;
-};
-
-console.log(planesInQueue(3));
-console.log(planesInQueue(5));
-console.log(planesInQueue(12));
+document.querySelector("button").addEventListener("click", function () {
+  const text = document.querySelector("textarea").value;
+  console.log(switchCase(text));
+  document.querySelector("textarea").value = switchCase(text);
+});
