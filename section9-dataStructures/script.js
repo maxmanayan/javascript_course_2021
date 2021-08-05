@@ -763,3 +763,53 @@ const plane = "A320";
 // checkBaggage("I have a laptop, some Food, and a pocket KNife");
 // checkBaggage("I have socks and a Camera");
 // checkBaggage("I got some snacks and a Gun for Protection");
+
+// Lesson 122 - Working with Strings pt 3
+// split() and join()
+console.log("a+very+nice+string".split("+"));
+console.log("Jonas Schmedtmann".split(" "));
+
+const [firstName, lastName] = "Jonas Schmedtmann".split(" ");
+console.log(firstName, lastName);
+
+const newName = ["Mr.", firstName, lastName.toUpperCase()].join(" ");
+console.log(newName);
+
+const capitalize = function (name) {
+  let nameCap = name
+    .split(" ")
+    .map((n) => `${n[0].toUpperCase()}${n.slice(1)}`)
+    .join(" ");
+
+  return nameCap;
+};
+
+const passenger = "jessica ann smith davis";
+
+console.log(capitalize(passenger));
+console.log(capitalize("max manayan"));
+
+// Padding - padStart() and padEnd()
+const message = "Go to Gate 23!";
+console.log(message.padStart(20, "+").padEnd(30, "="));
+
+const maskCreditCard = function (number) {
+  const str = number + "";
+  const maskedNumber = str.slice(-4).padStart(str.length, "*");
+  return maskedNumber;
+};
+
+console.log(maskCreditCard(1234567891011121));
+console.log(maskCreditCard("3235323832353235"));
+
+// Repeat - repeat()
+const delayMessage = "Severe Weather ... All Departures Delayed ... ";
+console.log(delayMessage.repeat(5));
+
+const planesInQueue = function (n) {
+  return `There are ${n} planes waiting to depart ${"✈️".repeat(n)}`;
+};
+
+console.log(planesInQueue(3));
+console.log(planesInQueue(5));
+console.log(planesInQueue(12));
