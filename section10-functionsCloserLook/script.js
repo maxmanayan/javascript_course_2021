@@ -66,33 +66,51 @@
 
 // Lesson 129 - First-Class and Higher-Order Functions
 
-// Lesson 130 - Functions Accepting Callback Functions
-const oneWord = function (str) {
-  return str.replace(/ /g, "").toLowerCase();
+// // Lesson 130 - Functions Accepting Callback Functions
+// const oneWord = function (str) {
+//   return str.replace(/ /g, "").toLowerCase();
+// };
+
+// const upperFirstWord = function (str) {
+//   const [first, ...others] = str.split(" ");
+//   return [first.toUpperCase(), ...others].join(" ");
+// };
+
+// // Higher-order function
+// const transformer = function (str, fn) {
+//   console.log(`Original String: ${str}`);
+//   console.log(`Transformed String: ${fn(str)}`);
+//   console.log(`Transformed by: ${fn.name}`);
+// };
+
+// // oneWord and upperFirstWord are callback functions
+// transformer("JavaScript is the best language!", oneWord);
+// transformer("JavaScript is the best language!", upperFirstWord);
+
+// // JS uses callbacks all the time
+// // addEventListener and forEach are higher-order, high5 is callback
+// const high5 = function () {
+//   console.log("✋");
+// };
+
+// document.body.addEventListener("click", high5);
+
+// ["Jonas", "Martha", "Adam"].forEach(high5);
+
+// Lesson 131 - Functions Returning Functions
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
 };
 
-const upperFirstWord = function (str) {
-  const [first, ...others] = str.split(" ");
-  return [first.toUpperCase(), ...others].join(" ");
-};
+// greeterHey is equal to the function we returned in greet()
+// saves greeting argument as "Hey"
+const greeterHey = greet("Hey");
+greeterHey("Max");
+greeterHey("Jonas");
 
-// Higher-order function
-const transformer = function (str, fn) {
-  console.log(`Original String: ${str}`);
-  console.log(`Transformed String: ${fn(str)}`);
-  console.log(`Transformed by: ${fn.name}`);
-};
+greet("Hello")("Brotherman");
 
-// oneWord and upperFirstWord are callback functions
-transformer("JavaScript is the best language!", oneWord);
-transformer("JavaScript is the best language!", upperFirstWord);
-
-// JS uses callbacks all the time
-// addEventListener and forEach are higher-order, high5 is callback
-const high5 = function () {
-  console.log("✋");
-};
-
-document.body.addEventListener("click", high5);
-
-["Jonas", "Martha", "Adam"].forEach(high5);
+const greetArrow = (greeting) => (name) => console.log(`${greeting} ${name}`);
+greetArrow("Howdy")("Arrow");
