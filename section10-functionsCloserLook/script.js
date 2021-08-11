@@ -163,3 +163,48 @@ book.apply(swiss, flightData);
 console.log(swiss);
 
 book.call(eurowings, ...flightData);
+
+// Lesson 133 - The bind Method
+
+const bookEW = book.bind(eurowings);
+const bookLH = book.bind(lufthansa);
+const bookLX = book.bind(swiss);
+
+bookEW(23, "Steven Williams");
+
+// partially applying flight number variable
+const bookEW23 = book.bind(eurowings, 23);
+bookEW23("Jonas Schmedtmann");
+bookEW23("Martha Cooper");
+
+// with Event Listeners
+lufthansa.planes = 300;
+lufthansa.buyPlane = function () {
+  console.log(this);
+
+  this.planes++;
+  console.log(this.planes);
+};
+
+document
+  .querySelector(".buy")
+  .addEventListener("click", lufthansa.buyPlane.bind(lufthansa));
+// by default, the this keyword will apply to the element associated with the handler function (the button)
+// must use bind to manually set this keyword
+
+// Partial application
+const addTax = (rate, value) => value + value * rate;
+console.log(addTax(0.1, 200));
+
+const addVAT = addTax.bind(null, 0.23); // same as addVAT = value => value + value * 0.23
+console.log(addVAT(100));
+console.log(addVAT(23));
+
+const setRate = function (rate) {
+  return function (value) {
+    console.log(value + value * rate);
+  };
+};
+
+const rate13 = setRate(0.13);
+rate13(100);
