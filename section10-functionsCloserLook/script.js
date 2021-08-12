@@ -271,29 +271,49 @@ GOOD LUCK 😀
 // poll.displayResults.call({ answers: [5, 2, 3] });
 // poll.displayResults.call({ answers: [1, 5, 3, 9, 6, 1] }, "string");
 
-// Lesson 135 - Immediately Invoked Function Expressions (IIFE)
-const runOnce = function () {
-  console.log("This will never run again");
+// // Lesson 135 - Immediately Invoked Function Expressions (IIFE)
+// const runOnce = function () {
+//   console.log("This will never run again");
+// };
+
+// runOnce();
+
+// // IIFE
+// (function () {
+//   console.log("This will REALLY never run again");
+//   const isPrivate = 23;
+// })();
+
+// // scope of IIFE not accessible from here
+// // console.log(isPrivate);
+
+// (() => console.log("This will ALSO never run again"))();
+
+// // can just create a block if you want to limit scope
+// {
+//   const isThisPrivate = 33;
+//   var notPrivate = 91;
+// }
+
+// // console.log(isThisPrivate);
+// console.log(notPrivate); // var scope is not limited
+
+// Lesson 136 - Closures
+const secureBooking = function () {
+  let passengerCount = 0;
+
+  return function () {
+    passengerCount++;
+    console.log(`${passengerCount} passengers`);
+  };
 };
 
-runOnce();
+// closures allow booker to remember the passengerCount variable, even after secureBooking has returned and left the execution context
+const booker = secureBooking();
 
-// IIFE
-(function () {
-  console.log("This will REALLY never run again");
-  const isPrivate = 23;
-})();
+booker();
+booker();
+booker();
 
-// scope of IIFE not accessible from here
-// console.log(isPrivate);
-
-(() => console.log("This will ALSO never run again"))();
-
-// can just create a block if you want to limit scope
-{
-  const isThisPrivate = 33;
-  var notPrivate = 91;
-}
-
-// console.log(isThisPrivate);
-console.log(notPrivate); // var scope is not limited
+// how to view the closure variables
+console.dir(booker);
