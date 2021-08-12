@@ -234,39 +234,66 @@ BONUS TEST DATA 2: [1, 5, 3, 9, 6, 1]
 GOOD LUCK 😀
 */
 
-const poll = {
-  question: "What is your favourite programming language?",
-  options: ["0: JavaScript", "1: Python", "2: Rust", "3: C++"],
-  // This generates [0, 0, 0, 0]. More in the next section 😃
-  answers: new Array(4).fill(0),
-  registerNewAnswer() {
-    let res = Number(
-      prompt(
-        `${this.question}\n${this.options.join("\n")}\n(Write Option Number)`
-      )
-    );
-    if (typeof res === "number" && res >= 0 && res <= 3) {
-      this.answers[res]++;
-      this.displayResults();
-      this.displayResults("string");
-    } else {
-      console.log("Invalid input");
-    }
-  },
-  displayResults(type = "array") {
-    if (type === "array") console.log(this.answers);
-    if (type === "string")
-      console.log(`Poll results are ${this.answers.join(", ")}`);
-  },
+// const poll = {
+//   question: "What is your favourite programming language?",
+//   options: ["0: JavaScript", "1: Python", "2: Rust", "3: C++"],
+//   // This generates [0, 0, 0, 0]. More in the next section 😃
+//   answers: new Array(4).fill(0),
+//   registerNewAnswer() {
+//     let res = Number(
+//       prompt(
+//         `${this.question}\n${this.options.join("\n")}\n(Write Option Number)`
+//       )
+//     );
+//     if (typeof res === "number" && res >= 0 && res <= 3) {
+//       this.answers[res]++;
+//       this.displayResults();
+//       this.displayResults("string");
+//     } else {
+//       console.log("Invalid input");
+//     }
+//   },
+//   displayResults(type = "array") {
+//     if (type === "array") console.log(this.answers);
+//     if (type === "string")
+//       console.log(`Poll results are ${this.answers.join(", ")}`);
+//   },
+// };
+
+// // poll.registerNewAnswer();
+
+// document
+//   .querySelector(".poll")
+//   .addEventListener("click", poll.registerNewAnswer.bind(poll));
+
+// // Bonus
+
+// poll.displayResults.call({ answers: [5, 2, 3] });
+// poll.displayResults.call({ answers: [1, 5, 3, 9, 6, 1] }, "string");
+
+// Lesson 135 - Immediately Invoked Function Expressions (IIFE)
+const runOnce = function () {
+  console.log("This will never run again");
 };
 
-// poll.registerNewAnswer();
+runOnce();
 
-document
-  .querySelector(".poll")
-  .addEventListener("click", poll.registerNewAnswer.bind(poll));
+// IIFE
+(function () {
+  console.log("This will REALLY never run again");
+  const isPrivate = 23;
+})();
 
-// Bonus
+// scope of IIFE not accessible from here
+// console.log(isPrivate);
 
-poll.displayResults.call({ answers: [5, 2, 3] });
-poll.displayResults.call({ answers: [1, 5, 3, 9, 6, 1] }, "string");
+(() => console.log("This will ALSO never run again"))();
+
+// can just create a block if you want to limit scope
+{
+  const isThisPrivate = 33;
+  var notPrivate = 91;
+}
+
+// console.log(isThisPrivate);
+console.log(notPrivate); // var scope is not limited
