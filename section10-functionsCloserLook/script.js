@@ -298,22 +298,65 @@ GOOD LUCK 😀
 // // console.log(isThisPrivate);
 // console.log(notPrivate); // var scope is not limited
 
-// Lesson 136 - Closures
-const secureBooking = function () {
-  let passengerCount = 0;
+// // Lesson 136 - Closures
+// const secureBooking = function () {
+//   let passengerCount = 0;
 
-  return function () {
-    passengerCount++;
-    console.log(`${passengerCount} passengers`);
+//   return function () {
+//     passengerCount++;
+//     console.log(`${passengerCount} passengers`);
+//   };
+// };
+
+// // closures allow booker to remember the passengerCount variable, even after secureBooking has returned and left the execution context
+// const booker = secureBooking();
+
+// booker();
+// booker();
+// booker();
+
+// // how to view the closure variables
+// console.dir(booker);
+
+// Lesson 137 - More Closure Examples
+let f;
+
+const g = function () {
+  const a = 23;
+  f = function () {
+    console.log(a * 2);
   };
 };
 
-// closures allow booker to remember the passengerCount variable, even after secureBooking has returned and left the execution context
-const booker = secureBooking();
+const h = function () {
+  const b = 777;
+  f = function () {
+    console.log(b * 2);
+  };
+};
 
-booker();
-booker();
-booker();
+g();
+f();
+console.dir(f);
 
-// how to view the closure variables
-console.dir(booker);
+// Re-assigning f function
+h();
+f();
+console.dir(f);
+
+// Example 2
+const boardPassengers = function (n, wait) {
+  const perGroup = n / 3;
+
+  setTimeout(function () {
+    console.log(`We are now boarding all ${n} passengers`);
+    console.log(`There are 3 groups, each with ${perGroup} passengers`);
+  }, wait * 1000);
+
+  console.log(`Will start boarding in ${wait} seconds`);
+};
+
+// Closure will have priority over the scope chain
+let perGroup = 300;
+
+boardPassengers(240, 3);
